@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>4fe3da79-e376-4626-aa07-f630cc8a05f4</ProjectGuid>
+    <ProjectGuid>{4FE3DA79-E376-4626-AA07-F630CC8A05F4}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>CImatronAPI_Template</RootNamespace>
@@ -16,11 +16,12 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <Optimize>true</Optimize>
+    <OutputPath>Build\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <RegisterForComInterop>true</RegisterForComInterop>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -30,25 +31,81 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>StrongName.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System"/>
-    
-    <Reference Include="System.Core"/>
-    <Reference Include="System.Xml.Linq"/>
-    <Reference Include="System.Data.DataSetExtensions"/>
-    
-    
-    <Reference Include="Microsoft.CSharp"/>
-    
-    <Reference Include="System.Data"/>
-    
-    <Reference Include="System.Net.Http"/>
-    
-    <Reference Include="System.Xml"/>
+    <Reference Include="interop.CimAppAccess">
+      <HintPath>..\..\..\..\..\..\Program Files\Cimatron\Cimatron\2024.0\Program\interop.CimAppAccess.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="interop.CimatronE">
+      <HintPath>..\..\..\..\..\..\Program Files\Cimatron\Cimatron\2024.0\Program\interop.CimatronE.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="interop.CimBaseAPI">
+      <HintPath>..\..\..\..\..\..\Program Files\Cimatron\Cimatron\2024.0\Program\interop.CimBaseAPI.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="interop.CimDrftAPI">
+      <HintPath>..\..\..\..\..\..\Program Files\Cimatron\Cimatron\2024.0\Program\interop.CimDrftAPI.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="interop.CimElectrodeAPI">
+      <HintPath>..\..\..\..\..\..\Program Files\Cimatron\Cimatron\2024.0\Program\interop.CimElectrodeAPI.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="interop.CimMdlrAPI">
+      <HintPath>..\..\..\..\..\..\Program Files\Cimatron\Cimatron\2024.0\Program\interop.CimMdlrAPI.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="interop.CIMMiscAPI">
+      <HintPath>..\..\..\..\..\..\Program Files\Cimatron\Cimatron\2024.0\Program\interop.CIMMiscAPI.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="interop.CimNcAPI">
+      <HintPath>..\..\..\..\..\..\Program Files\Cimatron\Cimatron\2024.0\Program\interop.CimNcAPI.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="interop.CimPack">
+      <HintPath>..\..\..\..\..\..\Program Files\Cimatron\Cimatron\2024.0\Program\interop.CimPack.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="interop.CimServicesAPI">
+      <HintPath>..\..\..\..\..\..\Program Files\Cimatron\Cimatron\2024.0\Program\interop.CimServicesAPI.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="interop.CimXplor">
+      <HintPath>..\..\..\..\..\..\Program Files\Cimatron\Cimatron\2024.0\Program\interop.CimXplor.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="interop.CimXplorAccess">
+      <HintPath>..\..\..\..\..\..\Program Files\Cimatron\Cimatron\2024.0\Program\interop.CimXplorAccess.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="interop.DmAttrTranslator">
+      <HintPath>..\..\..\..\..\..\Program Files\Cimatron\Cimatron\2024.0\Program\interop.DmAttrTranslator.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Command.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="StrongName.snk" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
- </Project>
+</Project>
